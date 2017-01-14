@@ -1,0 +1,95 @@
+#nav-container {
+
+	#nav-filter-input {
+		width: 100%;
+		border-radius: 500px;
+	}
+
+	.list-group {
+		list-style: none;
+		margin-bottom: 20px;
+		padding-left: 0;
+		background-color: transparent;
+		outline: 0;
+		margin-bottom: 0;
+
+		.list-group-item {
+			text-shadow: none;
+			border: 0;
+			border-bottom: 2px solid transparent;
+			cursor: pointer;
+			height: 72px;
+			line-height: 50px;
+			margin: 0;
+			padding: 0;
+			background-color: #1c1c1f;
+			background-clip: padding-box;
+			transition: background .1s ease;
+
+			position: relative;
+			display: block;
+			outline: 0;
+
+			&:hover {
+				background-color: #222326;
+			}
+
+			&.active {
+				background: #222326;
+				background-clip: padding-box;
+				border-color: transparent;
+
+				&:before {
+					background: #84bd00;
+					content: "";
+					height: 100%;
+					position: absolute;
+					right: 0;
+					width: 2px;
+					z-index: 100
+				}
+			}
+
+			.spoticon {
+				text-align: center;
+			}
+
+			a {
+				outline: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+			a:focus {
+				border-bottom-color: inherit;
+			}
+
+			.media {
+				left: 10px;
+				top: 10px;
+				bottom: 0;
+				padding-bottom: 0;
+				position: absolute;
+				transition: background .2s ease;
+				width: 50px;
+			}
+
+			.item-data {
+				height: 100%;
+				padding: 0 10px 70px 70px;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				line-height: 70px;
+			}
+
+		}
+
+
+	}
+
+}
+

@@ -1,0 +1,77 @@
+.tracklist-playlist {
+	table-layout: fixed;
+	width: 100%;
+
+	.tl-empty, .tl-number, .tl-play {
+		width: 40px;
+	}
+
+	.tl-header {
+
+		th {
+			border-top: 0;
+			letter-spacing: 1px;
+			line-height: 28px;
+			text-transform: uppercase;
+			vertical-align: bottom;
+			padding: 0 0 0 12px;
+			position: relative;
+		}
+
+	}
+
+	.tl-row {
+
+		.tl-cell {
+			background: #121314;
+			height: 40px;
+			padding: 0 0 0 12px;
+			border-top: 1px solid #222326;
+			position: relative;
+		}
+
+		.tl-cell, .tl-cell>div {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.tl-highlight {
+			color: #dfe0e6;
+		}
+
+		.btn-play {
+			display: none;
+			height: 40px;
+			margin-left: -4px;
+		}
+
+	}
+
+	.tl-row:hover {
+
+		.tl-cell {
+			background: #1c1c1f;
+		}
+
+		.btn-play {
+			display: inline-block;
+		}
+
+		.tl-highlight {
+			color: #fbfbfc;
+		}
+
+	}
+
+	.tl-row.selected {
+
+		.tl-cell {
+			background-color: #222326;
+			border-color: #121314;
+		}
+
+	}
+
+
+}

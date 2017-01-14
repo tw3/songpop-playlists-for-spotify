@@ -1,0 +1,72 @@
+@font-face {
+	font-family: spoticon;
+	src: url(/media/spoticon.svg) format("svg"), url(/media/spoticon.woff) format("woff"), url(/media/spoticon.ttf) format("truetype");
+	font-weight: 400;
+	font-style: normal
+}
+[class*=" spoticon-"]:before, [class^=spoticon-]:before {
+	font-family: spoticon;
+	font-style: normal;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: inherit;
+	vertical-align: bottom;
+	display: inline-block;
+	text-decoration: inherit
+}
+
+.spoticon-search-16:before {
+	content: "\f140";
+	font-size: 16px
+}
+.spoticon-search-32:before {
+	content: "\f141";
+	font-size: 32px
+}
+
+.spoticon-x-16:before {
+	content: "\f160";
+	font-size: 16px
+}
+.spoticon-x-24:before {
+	content: "\f1C5";
+	font-size: 24px
+}
+.spoticon-x-32:before {
+	content: "\f161";
+	font-size: 32px
+}
+
+.spoticon-x-16, .spoticon-search-16, .spoticon-search-32, .spoticon-arrow-left-16 {
+	line-height: 1.3
+}
+.spoticon-x-16, .spoticon-search-16 {
+	position: absolute;
+	top: 16px;
+	color: #88898c
+}
+.spoticon-x-16 {
+	right: 18px;
+	height: 14px
+}
+.spoticon-x-16::before {
+	font-size: 11px
+}
+
+.spoticon-search-16 {
+	height: 20px;
+	left: 16px
+}
+.spoticon-search-32 {
+	height: 107px
+}
+.spoticon-search-32::before {
+	font-size: 83px;
+	color: #3e3e40
+}
+
+.spoticon-playlist-32:before {
+	content: "\f135";
+	font-size: 32px
+}

@@ -1,0 +1,22 @@
+.media-image {
+	position: relative;
+	padding-bottom: 100%;
+	display: block;
+	background-color: #222326;
+	border: 0;
+}
+
+.media-image .media-image-internal {
+	opacity: 1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.media-image .media-image-internal, .media-image .media-placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

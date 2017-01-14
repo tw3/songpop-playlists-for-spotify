@@ -1,0 +1,88 @@
+.btn { border-style: solid; border-width: 1px; display: inline-block; margin-bottom: 0; text-align: center; vertical-align: middle; cursor: default; white-space: nowrap; border-radius: 500px; text-transform: uppercase; letter-spacing: 1.5px; position: relative; color: #dfe0e6; background: rgba(0, 0, 0, .2); border-color: rgba(0, 0, 0, .2); border-color: #88898c; padding: 0 27px; font-size: 14px; font-weight: 600; line-height: 30px; height: 32px; max-height: 32px }
+.btn>div, .btn>span { position: relative }
+.btn.active, .btn:active { outline: 0; background-image: none }
+.btn:after { content: ' '; border-radius: 500px; position: absolute; top: -1px; left: -2px; right: -1px; bottom: -1px; -webkit-transform: translate(0.5px, 0); -moz-transform: translate(0.5px, 0); -ms-transform: translate(0.5px, 0); -o-transform: translate(0.5px, 0); transform: translate(0.5px, 0) }
+.btn:focus { outline: 0 }
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn { cursor: default; pointer-events: none; opacity: .65; filter: alpha(opacity=65) }
+.btn.disabled.active, .btn.disabled:active, .btn.disabled:focus, .btn.disabled:hover, .btn[disabled].active, .btn[disabled]:active, .btn[disabled]:focus, .btn[disabled]:hover, fieldset[disabled] .btn.active, fieldset[disabled] .btn:active, fieldset[disabled] .btn:focus, fieldset[disabled] .btn:hover { opacity: .5; filter: alpha(opacity=50) }
+.btn .caret { border-top-color: #dfe0e6; border-bottom-color: #dfe0e6 }
+.btn:after { display: block; border: 1px solid #88898c }
+.btn:hover:not(.just-changed):not(.stay-added) { color: #fbfbfc; background: rgba(0, 0, 0, .2); border-color: rgba(0, 0, 0, .2); border-color: #fff }
+.btn:hover:not(.just-changed):not(.stay-added) .caret { border-top-color: #fbfbfc; border-bottom-color: #fbfbfc }
+.btn:hover:not(.just-changed):not(.stay-added):after { display: block; border: 1px solid #fff }
+.btn.active:not(.just-changed):not(.stay-added), .btn:active:not(.just-changed):not(.stay-added) { color: #b4b8c4; background: rgba(0, 0, 0, .2); border-color: rgba(0, 0, 0, .2); border-color: #626366 }
+.btn.active:not(.just-changed):not(.stay-added) .caret, .btn:active:not(.just-changed):not(.stay-added) .caret { border-top-color: #b4b8c4; border-bottom-color: #b4b8c4 }
+.btn.active:not(.just-changed):not(.stay-added):after, .btn:active:not(.just-changed):not(.stay-added):after { display: block; border: 1px solid #626366 }
+.btn.btn-icon:empty { padding-left: 0; padding-right: 0 }
+.btn.btn-icon:before { font-family: spoticon; font-style: normal; font-weight: 400; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; vertical-align: bottom; display: block; text-decoration: inherit; position: absolute; text-align: center; top: 0 }
+.btn.btn-icon:empty { width: 32px }
+.btn.btn-icon:not(:empty) { /* padding-left: 52px */ }
+.btn.btn-icon:not(:empty):before { left: 24px }
+.btn.btn-icon:before { font-size: 24px; width: 24px; left: 3px }
+.btn .btn-alt-text { margin-top: -30px }
+.btn.btn-icon:before { line-height: 30px }
+.btn-small { padding: 0 20px; font-size: 12px; font-weight: 400; line-height: 26px; height: 28px; max-height: 28px }
+.btn-small.btn-icon:empty { width: 28px }
+.btn-small.btn-icon:not(:empty) { /* padding-left: 36px */ }
+.btn-small.btn-icon:not(:empty):before { left: 16px }
+.btn-small.btn-icon:before { font-size: 16px; width: 16px; left: 5px }
+.btn-small .btn-alt-text { margin-top: -26px }
+.btn-small.btn-icon:before { line-height: 26px }
+@-moz-document url-prefix() { .btn:not(.btn-small) { padding-top: 1px }
+	.btn:after { display: none !important }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.btn {/* padding-top: 1px; */}
+	.btn.btn-large { padding-top: 2px }
+}
+.btn-primary { color: #dfe0e6; background: #648f00; border-color: #648f00 }
+.btn-primary .caret { border-top-color: #dfe0e6; border-bottom-color: #dfe0e6 }
+.btn-primary:after { display: none }
+.btn-primary:not(.just-changed):not(.stay-added):hover { color: #fbfbfc; background: #84bd00; border-color: #84bd00 }
+.btn-primary:not(.just-changed):not(.stay-added):hover .caret { border-top-color: #fbfbfc; border-bottom-color: #fbfbfc }
+.btn-primary:not(.just-changed):not(.stay-added):hover:after { display: none }
+.btn-primary.active:not(.just-changed):not(.stay-added), .btn-primary:active:not(.just-changed):not(.stay-added) { color: #b4b8c4; background: #425e00; border-color: #425e00 }
+.btn-primary.active:not(.just-changed):not(.stay-added) .caret, .btn-primary:active:not(.just-changed):not(.stay-added) .caret { border-top-color: #b4b8c4; border-bottom-color: #b4b8c4 }
+.btn-primary.active:not(.just-changed):not(.stay-added):after, .btn-primary:active:not(.just-changed):not(.stay-added):after { display: none }
+.btn.btn-icon[class*=spoticon-]:empty:before { font-size: 18px; left: 4px }
+.btn.btn-icon[class*=spoticon-]:empty.btn-large:before { font-size: 25px; left: 6px }
+.btn.btn-icon[class*=spoticon-]:empty.btn-small:before { font-size: 16px; left: 5px }
+.btn-play .btn-pause-text { visibility: hidden }
+.btn-play .btn-radio-text, .btn-play.radio-play .btn-play-text { display: none }
+.btn-play.radio-play .btn-radio-text { display: block }
+.btn-play:not(.btn-primary) .playing { color: #dfe0e6; background: rgba(0, 0, 0, .2); border-color: rgba(0, 0, 0, .2); border-color: #dfe0e6 }
+.btn-play:not(.btn-primary) .playing .caret { border-top-color: #dfe0e6; border-bottom-color: #dfe0e6 }
+.btn-play:not(.btn-primary) .playing:after { display: block; border: 1px solid #dfe0e6 }
+.btn-play:not(.btn-primary) .playing:hover { color: #fbfbfc; background: rgba(0, 0, 0, .2); border-color: rgba(0, 0, 0, .2); border-color: #fbfbfc }
+.btn-play:not(.btn-primary) .playing:hover:after { display: block; border: 1px solid #fbfbfc }
+.btn-play:not(.btn-primary) .playing.active, .btn-play:not(.btn-primary) .playing:active { color: #b4b8c4; background: rgba(0, 0, 0, .2); border-color: rgba(0, 0, 0, .2); border-color: #b4b8c4 }
+.btn-play:not(.btn-primary) .playing.active .caret, .btn-play:not(.btn-primary) .playing:active .caret { border-top-color: #b4b8c4; border-bottom-color: #b4b8c4 }
+.btn-play:not(.btn-primary) .playing.active:after, .btn-play:not(.btn-primary) .playing:active:after { display: block; border: 1px solid #b4b8c4 }
+.btn-play.playing .btn-play-text, .btn-play.playing .btn-radio-text { visibility: hidden }
+.btn-play.playing .btn-pause-text { visibility: visible }
+.btn.btn-play.btn-icon:before { content: "\f1C8"; font-size: 24px }
+.btn.btn-play.btn-icon.radio-play:before { content: "\f1C7" }
+.btn.btn-play.btn-icon.playing:before { content: "\f1D1" }
+.btn.btn-play.btn-icon.playing:hover:before { content: "\f1D3" }
+.btn.btn-play.btn-icon.btn-large:before { content: "\f133"; font-size: 32px }
+.btn.btn-play.btn-icon.btn-large.radio-play:before { content: "\f13d" }
+.btn.btn-play.btn-icon.btn-large.playing:before { content: "\f1D1" }
+.btn.btn-play.btn-icon.btn-large.playing:hover:before { content: "\f131" }
+.btn.btn-play.btn-icon.btn-small:before { content: "\f132"; font-size: 16px }
+.btn.btn-play.btn-icon.btn-small.radio-play:before { content: "\f13c" }
+.btn.btn-play.btn-icon.btn-small.playing:before { content: "\f1D0" }
+.btn.btn-play.btn-icon.btn-small.playing:hover:before { content: "\f130" }
+
+.input-wrapper {
+	position: relative;
+	background-color: #3e3e40;
+	width: 100%;
+	padding: 10px;
+}
+
+.input-wrapper input {
+	padding-right: 20px !important;
+	padding-left: 26px !important;
+}
+
+

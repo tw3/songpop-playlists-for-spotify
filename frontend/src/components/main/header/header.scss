@@ -1,0 +1,129 @@
+.pf-playlist-view {
+
+	header {
+
+		background: #121314;
+		min-height: 194px;
+		margin: 0 auto;
+		position: relative;
+		margin-bottom: 22px;
+
+		section {
+			min-width: 610px;
+			position: relative;
+		}
+
+		.header-container {
+			display: table;
+			height: 150px;
+			width: 100%;
+		}
+
+		.header-interior {
+			display: table-cell;
+			padding: 0 0 16px 0;
+			vertical-align: bottom;
+		}
+
+		.header-media {
+			vertical-align: top;
+			width: 226px;
+			padding-right: 16px;
+		}
+
+		.media-image {
+
+
+			.media-image-internal {
+				opacity: 1;
+				background-image: url('https://d3rt1990lpmkn.cloudfront.net/300/019cea917cbb9cffda167365fbdac8f154c946984028345ae010e379415f92929ff7d1c2523a3680a47b7ea6600f4463c9a415170b94480a6be6f9f2cab4ea18038cb2660e02b608bc6d9e4752a891a2');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			.media-image-internal, .media-placeholder {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+		}
+
+		.header-data {
+			height: 210px;
+			padding-bottom: 50px;
+			vertical-align: top;
+
+			.header-label {
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 12px;
+			}
+
+			.header-playlist-title {
+				font-size: 48px;
+				line-height: 56px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				max-height: 108px;
+				position: relative;
+				color: #dfe0e6;
+				margin-top: 0;
+
+				span {
+					font-weight: 100;
+				}
+
+			}
+
+			.description {
+				max-width: 550px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				margin-top: 8px;
+				font-size: 12px;
+				line-height: 16px;
+				max-height: 32px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.header-controllers {
+				bottom: 16px;
+				position: absolute;
+				margin-top: 10px;
+				color: #ffffff;
+
+				.btn {
+					margin-right: 8px;
+				}
+
+			}
+
+		}
+
+		.header-bar {
+
+			> div {
+				border-top: 1px solid #222326;
+				border-bottom: 1px solid #222326;
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				line-height: 36px;
+			}
+
+		}
+	}
+
+}

@@ -1,0 +1,8 @@
+*.iml
+*.zip
+*.7z
+.idea/
+doc/
+node_modules/
+public/js/
+public/css/
