@@ -1,4 +1,4 @@
-const playlists = [
+const fakePlaylists = [
 	{ label: 'No. 1 Hits 1970s-2000s' },
 	{ label: 'No. 1 Hits 1990-95' },
 	{ label: 'No. 1 Rap Hits', selected: true},
@@ -122,11 +122,11 @@ const playlists = [
 	{ label: '80\'s Guilty Pleasures' },
 ];
 
-export default (state = [], action = {}) => {
+export default (inputPlaylists = [], action = {}) => {
 	switch (action.type) {
 		case 'PLAYLISTS_FETCH_LIST':
-			return playlists;
+			return fakePlaylists;
 		default:
-			return state;
+			return inputPlaylists;
 	}
 };
