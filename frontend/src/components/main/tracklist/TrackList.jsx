@@ -1,29 +1,44 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import Track from './Track';
-import tracklist from './__stub__/TrackList-data.js';
 import './tracklist.scss';
 
-const TrackList = (props) => {
-	return (
-		<table className="tracklist-playlist">
-			<thead className="tl-header">
-				<tr>
-					<th className="tl-play"></th>
-					<th className="tl-name">Song</th>
-					<th className="tl-artists">Artist</th>
-				</tr>
-			</thead>
-			<tbody>
-			{tracklist.map((track, index) => {
-				return (
-					<Track key={index} track={track} />
-				);
-			})}
-			</tbody>
-		</table>
-	);
+class TrackList extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<table className="tracklist-playlist">
+				<thead className="tl-header">
+					<tr>
+						<th className="tl-play"></th>
+						<th className="tl-name">Song</th>
+						<th className="tl-artists">Artist</th>
+					</tr>
+				</thead>
+				<tbody>
+					{this.props.tracklist.map((track, index) => {
+						return (
+							<Track key={index} track={track} />
+						);
+					})}
+				</tbody>
+			</table>
+		);
+	}
+}
+
+TrackList.propTypes = {
+	tracklist: PropTypes.array,
 };
 
-TrackList.propTypes = {};
+const mapStateToProps = (state) => {
+	const selectedPlaylist = state.collectionData.playlists[state.collectionData.selectedId];
+	return {
+		tracklist: selectedPlaylist.tracklist,
+	};
+};
 
-export default TrackList;
+export default connect(mapStateToProps)(TrackList);

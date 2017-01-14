@@ -1,59 +1,52 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { ProgressBar, Row, Col } from 'react-bootstrap';
-import Nav from './nav/Nav';
+import Loading from './Loading';
+import Layout from './Layout';
 import '../stylesheets/styles.scss';
 
 export class App extends React.Component {
 	// pre-render logic
 	componentWillMount() {
-		// the first time we load the app, we need to load some sort of data
+		// the first time we load the app, we need to load some sort of
+		//const that = this;
+		//window.setTimeout(() => {
+		//	that.props.dispatch({ type: 'PLAYLISTS_FETCH_LIST' });
+		//}, 3000);
 		this.props.dispatch({ type: 'PLAYLISTS_FETCH_LIST' });
 	}
 
 	// render
 	render() {
 		// show the loading state while we wait for the app to load
-		const { children } = this.props;
+		const { bInit, children } = this.props;
 
 		// render
 		return (
-			<div className="container">
-
-				<div className="top-header">
-					<Row>
-						<Col xs={12}>
-							<img
-								src="/media/longlogo.png" alt="SongPop Playlists for SongPop"
-								width="320" height="100"
-							/>
-						</Col>
-					</Row>
-				</div>
-
-				<div className="pf-app">
-					<Col
-						componentClass="nav"
-						className="pf-nav"
-						lg={3} md={4} sm={4} xs={6}
-					>
-						<Nav />
-					</Col>
-					<Col
-						componentClass="section"
-						id="pf-playlist-view" className="pf-playlist-view"
-						lg={9} md={8} sm={8} xs={6}
-					>
+			<div>
+				{!bInit ? (
+					<Loading>
 						{children}
-					</Col>
-				</div>
+					</Loading>
+				) : (
+					<Layout>
+						{children}
+					</Layout>
+				)}
 			</div>
 		);
 	}
 }
 
 App.propTypes = {
+	bInit: PropTypes.bool,
 	children: PropTypes.node,
+	dispatch: PropTypes.func.isRequired,
 };
 
-export default connect()(App);
+const mapStateToProps = (state) => {
+	return {
+		bInit: state.collectionData && state.collectionData.bInit,
+	};
+};
+
+export default connect(mapStateToProps)(App);

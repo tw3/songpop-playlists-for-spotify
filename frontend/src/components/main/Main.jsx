@@ -3,7 +3,7 @@ import MainHeader from './header/MainHeader';
 import TrackList from './tracklist/TrackList';
 import './main.scss';
 
-const Main = (props) => {
+const Main = () => {
 	return (
 		<div className="content-wrapper">
 			<div id="main-title">
@@ -18,7 +18,5 @@ const Main = (props) => {
 		</div>
 	);
 };
-
-Main.propTypes = {};
 
 export default Main;

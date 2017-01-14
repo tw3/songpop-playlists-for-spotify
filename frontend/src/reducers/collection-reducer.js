@@ -245,6 +245,7 @@ const fakeTracklist = [
 	{ title: 'Physical', artist: 'Olivia Newton-John' },
 ];
 export default (inputCollectionData = {}, action = {}) => {
+	let playlistId, playlistIdx, playlist, newPlaylist, bHasPlaylistPayload;
 	let updatedCollectionData = {};
 	switch (action.type) {
 		case 'PLAYLISTS_FETCH_LIST':
@@ -258,14 +259,29 @@ export default (inputCollectionData = {}, action = {}) => {
 			}
 			return updatedCollectionData;
 		case 'PLAYLIST_SHOW':
-			if (action.payload) {
-				// Do a shallow clone and change the selectedId
-				updatedCollectionData = {
-					...inputCollectionData,
-					selectedId: action.payload.playlist.id,
-				};
+			bHasPlaylistPayload =
+				(action.payload && action.payload.playlist && action.payload.playlist.id);
+			if (bHasPlaylistPayload) {
+				playlistId = action.payload.playlist.id;
 			} else {
-				updatedCollectionData = inputCollectionData;
+				// No playlist in payload -> show first playlist
+				playlistId = inputCollectionData.playlists[0].id;
+			}
+			// Update the selectedId
+			updatedCollectionData = {
+				...inputCollectionData,
+				selectedId: playlistId,
+			};
+			// Copy over the tracklist if it doesn't already exist
+			playlistIdx = playlistId;
+			playlist = updatedCollectionData.playlists[playlistIdx];
+			if (!playlist.hasOwnProperty('tracklist')) {
+				playlist = { ...playlist, tracklist: fakeTracklist };
+				updatedCollectionData.playlists = [
+					...updatedCollectionData.playlists.slice(0, playlistIdx),
+					playlist,
+					...updatedCollectionData.playlists.slice(playlistIdx + 1),
+				];
 			}
 			return updatedCollectionData;
 		default:

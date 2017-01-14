@@ -19,13 +19,14 @@ th { font-weight: 400; text-align: left; }
 
 @import 'controls';
 @import 'media';
+@import 'throbber';
 
 .container {
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 1330px;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0)
+	//-webkit-transform: translate3d(0, 0, 0);
+	//transform: translate3d(0, 0, 0)
 }
 
 #app {
@@ -56,3 +57,4 @@ th { font-weight: 400; text-align: left; }
 	}
 
 }
+
