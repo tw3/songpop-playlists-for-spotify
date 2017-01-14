@@ -5,7 +5,7 @@ import Nav from './nav/Nav';
 
 const Layout = (props) => {
 	return (
-		<div className="container">
+		<div className="container layout-container">
 			<div className="top-header">
 				<Row>
 					<Col xs={12}>
