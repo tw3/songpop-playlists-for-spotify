@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { ListGroup } from 'react-bootstrap';
 import logger from 'js-logger';
 import Playlist from './Playlist';
-import playlists from './__stub__/PlaylistNav-data';
 
 function showPlaylist(playlist) {
 	logger.debug(`showPlaylist: playlist = ${JSON.stringify(playlist)}`);
 }
 
 const PlaylistNav = (props) => {
+	const { playlists } = props;
 	// react bootstrap seems to ignore the componentClass attribute for <ListGroup />
 	return (
 		<ListGroup componentClass="div">
@@ -27,6 +28,14 @@ const PlaylistNav = (props) => {
 	);
 };
 
-PlaylistNav.propTypes = {};
+PlaylistNav.propTypes = {
+	playlists: PropTypes.array.isRequired,
+};
 
-export default PlaylistNav;
+const mapStateToProps = (state) => {
+	return {
+		playlists: state.playlists,
+	};
+};
+
+export default connect(mapStateToProps)(PlaylistNav);

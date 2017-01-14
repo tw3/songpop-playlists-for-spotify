@@ -8,7 +8,7 @@ export class App extends React.Component {
 	// pre-render logic
 	componentWillMount() {
 		// the first time we load the app, we need to load some sort of data
-		// e.g. this.props.dispatch({ type: 'OBJ_FETCH_SOMETHING' });
+		this.props.dispatch({ type: 'PLAYLISTS_FETCH_LIST' });
 	}
 
 	// render
@@ -56,11 +56,4 @@ App.propTypes = {
 	children: PropTypes.node,
 };
 
-// export the connected class
-function mapStateToProps(state) {
-	return {
-		// This is where you map state variables to props for this component
-	};
-}
-
-export default connect(mapStateToProps)(App);
+export default connect()(App);

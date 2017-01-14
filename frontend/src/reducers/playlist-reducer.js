@@ -1,7 +1,7 @@
 const playlists = [
 	{ label: 'No. 1 Hits 1970s-2000s' },
 	{ label: 'No. 1 Hits 1990-95' },
-	{ label: 'No. 1 Rap Hits', selected: true },
+	{ label: 'No. 1 Rap Hits', selected: true},
 	{ label: 'No. 1 Rock Hits!' },
 	{ label: 'BadGirls' },
 	{ label: 'Hot100: April \'15' },
@@ -122,4 +122,11 @@ const playlists = [
 	{ label: '80\'s Guilty Pleasures' },
 ];
 
-export default playlists;
+export default (state = [], action = {}) => {
+	switch (action.type) {
+		case 'PLAYLISTS_FETCH_LIST':
+			return playlists;
+		default:
+			return state;
+	}
+};
