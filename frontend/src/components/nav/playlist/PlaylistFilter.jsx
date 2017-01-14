@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Form, FormControl, Glyphicon } from 'react-bootstrap';
 import logger from 'js-logger';
 
-class PlaylistNavFilter extends Component {
+class PlaylistFilter extends Component {
 	constructor(props) {
 		super(props);
 
@@ -29,6 +29,6 @@ class PlaylistNavFilter extends Component {
 	}
 }
 
-PlaylistNavFilter.propTypes = {};
+PlaylistFilter.propTypes = {};
 
-export default PlaylistNavFilter;
+export default PlaylistFilter;

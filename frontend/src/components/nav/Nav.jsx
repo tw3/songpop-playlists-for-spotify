@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import PlaylistNavFilter from './playlist/PlaylistNavFilter';
-import PlaylistNav from './playlist/PlaylistNav';
+import PlaylistFilter from './playlist/PlaylistFilter';
+import Collection from './playlist/Collection';
 import './nav.scss';
 
 const Nav = () => {
@@ -9,8 +9,8 @@ const Nav = () => {
 			<div id="nav-title">
 				<h2>SongPop Playlists</h2>
 			</div>
-			<PlaylistNavFilter />
-			<PlaylistNav />
+			<PlaylistFilter />
+			<Collection />
 		</div>
 	);
 };

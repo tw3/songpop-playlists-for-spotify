@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import { ListGroupItem } from 'react-bootstrap';
 
 const Playlist = (props) => {
-	const { playlist, showPlaylist } = props;
+	const { playlist, selectedId, showPlaylist } = props;
 	const listGroupItemClasses = ['list-group-item'];
-	if (playlist.selected) listGroupItemClasses.push('active');
+	if (playlist.id === selectedId) listGroupItemClasses.push('active');
 	return (
 		<ListGroupItem className={listGroupItemClasses.join(' ')}>
 			<a onClick={() => showPlaylist(playlist)}>
@@ -35,6 +35,7 @@ const Playlist = (props) => {
 
 Playlist.propTypes = {
 	playlist: PropTypes.object.isRequired,
+	selectedId: PropTypes.number,
 	showPlaylist: PropTypes.func.isRequired,
 };
 
