@@ -23,8 +23,10 @@ export class App extends React.Component {
 				<div className="top-header">
 					<Row>
 						<Col xs={12}>
-							<img src="/media/longlogo.png" />
-							{/*<h1>SongPop Playlists for Spotify</h1>*/}
+							<img
+								src="/media/longlogo.png" alt="SongPop Playlists for SongPop"
+								width="320" height="100"
+							/>
 						</Col>
 					</Row>
 				</div>

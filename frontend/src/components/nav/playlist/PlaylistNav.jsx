@@ -6,12 +6,12 @@ import playlists from './__stub__/PlaylistNav-data';
 
 function showPlaylist(playlist) {
 	logger.debug(`showPlaylist: playlist = ${JSON.stringify(playlist)}`);
-
 }
 
 const PlaylistNav = (props) => {
+	// react bootstrap seems to ignore the componentClass attribute for <ListGroup />
 	return (
-		<ListGroup componentClass='div'>
+		<ListGroup componentClass="div">
 			{playlists.filter((playlist, index) => {
 				return true;
 			}).map((playlist, index) => {

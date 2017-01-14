@@ -21,8 +21,7 @@ class PlaylistNavFilter extends Component {
 					<FormControl
 						id="nav-filter-input"
 						type="text" placeholder="Filter playlists"
-					>
-					</FormControl>
+					/>
 					<i className="spoticon-x-16 cross"></i>
 				</div>
 			</Form>

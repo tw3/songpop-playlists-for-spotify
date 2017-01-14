@@ -1,6 +1,7 @@
 *.iml
 *.zip
 *.7z
+*.log
 .idea/
 doc/
 node_modules/
