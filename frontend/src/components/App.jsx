@@ -12,7 +12,7 @@ export class App extends React.Component {
 		//window.setTimeout(() => {
 		//	that.props.dispatch({ type: 'PLAYLISTS_FETCH_LIST' });
 		//}, 3000);
-		this.props.dispatch({ type: 'PLAYLISTS_FETCH_LIST' });
+		this.props.dispatch({ type: 'COLLECTION_FETCH_PLAYLISTS' });
 	}
 
 	// render
