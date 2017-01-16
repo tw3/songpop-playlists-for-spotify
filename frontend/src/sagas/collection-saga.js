@@ -33,3 +33,27 @@ export function* collectionFetchList() {
 	}
 }
 
+export function* collectionShowPlaylist(action) {
+	try {
+		// Fetch playlists if necessary
+		const playlist = action.payload.playlist;
+		if (!playlist.hasOwnProperty("tracklist")) {
+			const tracklist = yield call(ApiCollection.getTracklist, playlist);
+			//console.log("collectionShowPlaylist, tracklist = " + tracklist);
+
+			yield put({
+				type: types.COLLECTION_SET_TRACKLIST,
+				payload: {
+					playlist,
+					tracklist,
+				},
+			});
+		}
+	} catch (error) {
+		yield put({
+			type: types.COLLECTION_SET_TRACKLIST,
+			payload: new Error(error),
+		});
+	}
+}
+

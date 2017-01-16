@@ -17,7 +17,7 @@ class Collection extends Component {
 	showPlaylist(playlist) {
 		// TODO activate fetch by switching the URL
 		this.props.dispatch(collectionShowPlaylist(playlist));
-		logger.debug(`showPlaylist: playlist = ${JSON.stringify(playlist)}`);
+		// logger.debug(`showPlaylist: playlist = ${JSON.stringify(playlist)}`);
 	}
 
 	render() {
