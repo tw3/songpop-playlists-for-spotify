@@ -1,5 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import ApiCollection from '../api/collection-api.js';
+import * as types from '../constants/actionTypes';
 
 export function* collectionFetchList() {
 	try {
@@ -10,7 +11,7 @@ export function* collectionFetchList() {
 
 		// save the collection in state
 		yield put({
-			type: 'COLLECTION_SAVE_PLAYLISTS',
+			type: types.COLLECTION_SAVE_PLAYLISTS,
 			payload: {
 				playlists,
 			},
@@ -18,14 +19,14 @@ export function* collectionFetchList() {
 
 		// show the first playlist in the list
 		yield put({
-			type: 'PLAYLIST_SHOW',
+			type: types.COLLECTION_SHOW_PLAYLIST,
 			payload: {
 				playlist: playlists[0],
 			},
 		});
-} catch (error) {
+	} catch (error) {
 		yield put({
-			type: 'COLLECTION_SAVE_PLAYLISTS',
+			type: types.COLLECTION_SAVE_PLAYLISTS,
 			payload: new Error(error),
 			error: true,
 		});

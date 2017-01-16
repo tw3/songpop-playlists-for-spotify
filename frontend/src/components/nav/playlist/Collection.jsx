@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { ListGroup } from 'react-bootstrap';
 import logger from 'js-logger';
 import Playlist from './Playlist';
+import { collectionShowPlaylist } from '../../../actions/collectionActions';
 
 class Collection extends Component {
 	constructor(props) {
@@ -14,12 +15,7 @@ class Collection extends Component {
 
 	showPlaylist(playlist) {
 		// TODO activate fetch by switching the URL
-		this.props.dispatch(
-			{
-				type: 'PLAYLIST_SHOW',
-				payload: { playlist },
-			}
-		);
+		this.props.dispatch(collectionShowPlaylist(playlist));
 		logger.debug(`showPlaylist: playlist = ${JSON.stringify(playlist)}`);
 	}
 

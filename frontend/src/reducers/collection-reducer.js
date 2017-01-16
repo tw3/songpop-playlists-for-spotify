@@ -1,3 +1,5 @@
+import * as types from '../constants/actionTypes';
+
 const fakeTracklist = [
 	{ title: 'The Sign', artist: 'Ace Of Base' },
 	{ title: 'I Don\'t Want To Miss A Thing', artist: 'Aerosmith' },
@@ -121,11 +123,12 @@ const fakeTracklist = [
 	{ title: 'Magic', artist: 'Olivia Newton-John' },
 	{ title: 'Physical', artist: 'Olivia Newton-John' },
 ];
+
 export default (inputCollectionData = {}, action = {}) => {
 	let playlistId, playlistIdx, playlist, newPlaylist, bHasPlaylistPayload;
 	let updatedCollectionData = {};
 	switch (action.type) {
-		case 'COLLECTION_SAVE_PLAYLISTS':
+		case types.COLLECTION_SAVE_PLAYLISTS:
 			// Initialize collection if necessary
 			if (inputCollectionData.bInit) {
 				updatedCollectionData = inputCollectionData;
@@ -135,7 +138,7 @@ export default (inputCollectionData = {}, action = {}) => {
 				updatedCollectionData.bInit = true;
 			}
 			return updatedCollectionData;
-		case 'PLAYLIST_SHOW':
+		case types.COLLECTION_SHOW_PLAYLIST:
 			playlistId = action.payload.playlist.id;
 			// Update the selectedId
 			updatedCollectionData = {

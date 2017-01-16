@@ -2,17 +2,14 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Loading from './Loading';
 import Layout from './Layout';
+import { collectionFetchPlaylists } from '../actions/collectionActions';
 import '../stylesheets/styles.scss';
 
 export class App extends React.Component {
 	// pre-render logic
 	componentWillMount() {
 		// the first time we load the app, we need to load some sort of
-		//const that = this;
-		//window.setTimeout(() => {
-		//	that.props.dispatch({ type: 'PLAYLISTS_FETCH_LIST' });
-		//}, 3000);
-		this.props.dispatch({ type: 'COLLECTION_FETCH_PLAYLISTS' });
+		this.props.dispatch(collectionFetchPlaylists());
 	}
 
 	constructor(props) {
