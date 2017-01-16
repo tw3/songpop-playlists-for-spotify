@@ -9,23 +9,29 @@ class TrackList extends Component {
 	}
 
 	render() {
-		return (
-			<table className="tracklist-playlist">
-				<thead className="tl-header">
+		const { tracklist } = this.props;
+		if (tracklist) {
+			return (
+				<table className="tracklist-playlist">
+					<thead className="tl-header">
 					<tr>
 						<th className="tl-play"></th>
 						<th className="tl-name">Song</th>
 						<th className="tl-artists">Artist</th>
 					</tr>
-				</thead>
-				<tbody>
-					{this.props.tracklist.map((track, index) => {
+					</thead>
+					<tbody>
+					{tracklist.map((track, index) => {
 						return (
 							<Track key={index} track={track} />
 						);
 					})}
-				</tbody>
-			</table>
+					</tbody>
+				</table>
+			);
+		}
+		return (
+			<p>Therea are no tracks for this playlist</p>
 		);
 	}
 }
