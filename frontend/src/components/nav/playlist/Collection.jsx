@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { ListGroup } from 'react-bootstrap';
 import logger from 'js-logger';
-import Playlist from './Playlist';
 import { collectionShowPlaylist } from '../../../actions/collectionActions';
+import { getCollectionData } from '../../../selectors';
+import Playlist from './Playlist';
 
 class Collection extends Component {
 	constructor(props) {
@@ -48,7 +49,7 @@ Collection.propTypes = {
 
 const mapStateToProps = (state) => {
 	return {
-		collectionData: state.collectionData,
+		collectionData: getCollectionData(state),
 	};
 };
 

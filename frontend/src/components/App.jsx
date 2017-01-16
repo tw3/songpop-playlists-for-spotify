@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Loading from './Loading';
 import Layout from './Layout';
 import { collectionFetchPlaylists } from '../actions/collectionActions';
+import { getIsCollectionReady } from '../selectors';
 import '../stylesheets/styles.scss';
 
 export class App extends React.Component {
@@ -50,7 +51,7 @@ App.propTypes = {
 
 const mapStateToProps = (state) => {
 	return {
-		bInit: state.collectionData && state.collectionData.bInit,
+		bInit: getIsCollectionReady(state),
 	};
 };
 

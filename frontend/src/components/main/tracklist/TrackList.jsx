@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { getCurrentTracklist } from '../../../selectors';
 import Track from './Track';
 import './tracklist.scss';
 
@@ -41,9 +42,8 @@ TrackList.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-	const selectedPlaylist = state.collectionData.playlists[state.collectionData.selectedId];
 	return {
-		tracklist: selectedPlaylist.tracklist,
+		tracklist: getCurrentTracklist(state),
 	};
 };
 
