@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Nav from './nav/Nav';
 
@@ -41,4 +40,4 @@ Layout.propTypes = {
 	children: PropTypes.node,
 };
 
-export default connect()(Layout);
+export default Layout;

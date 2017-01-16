@@ -15,6 +15,14 @@ export class App extends React.Component {
 		this.props.dispatch({ type: 'COLLECTION_FETCH_PLAYLISTS' });
 	}
 
+	constructor(props) {
+		super(props);
+
+		// default ui local state
+		this.state = {
+		};
+	}
+
 	// render
 	render() {
 		// show the loading state while we wait for the app to load

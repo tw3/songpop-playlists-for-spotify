@@ -12,10 +12,6 @@ class Collection extends Component {
 		this.showPlaylist = this.showPlaylist.bind(this);
 	}
 
-	componentWillMount() {
-		this.props.dispatch({ type: 'PLAYLIST_SHOW' });
-	}
-
 	showPlaylist(playlist) {
 		// TODO activate fetch by switching the URL
 		this.props.dispatch(

@@ -22,13 +22,13 @@ module.exports = {
 		emitWarnings: false,
 	},
 	module: {
-		preLoaders: [
-			{
-				test: /\.(js|jsx)$/,
-				loaders: ["eslint-loader"],
-				exclude: /node_modules/
-			}
-		],
+		//preLoaders: [
+		//	{
+		//		test: /\.(js|jsx)$/,
+		//		loaders: ["eslint-loader"],
+		//		exclude: /node_modules/
+		//	}
+		//],
 		loaders: [
 			{
 				test: /\.(js|jsx)$/,

@@ -136,14 +136,7 @@ export default (inputCollectionData = {}, action = {}) => {
 			}
 			return updatedCollectionData;
 		case 'PLAYLIST_SHOW':
-			bHasPlaylistPayload =
-				(action.payload && action.payload.playlist && action.payload.playlist.id);
-			if (bHasPlaylistPayload) {
-				playlistId = action.payload.playlist.id;
-			} else {
-				// No playlist in payload -> show first playlist
-				playlistId = inputCollectionData.playlists[0].id;
-			}
+			playlistId = action.payload.playlist.id;
 			// Update the selectedId
 			updatedCollectionData = {
 				...inputCollectionData,
